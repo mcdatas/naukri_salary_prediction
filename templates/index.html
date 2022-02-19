@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Prediction API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body style="background-color:powderblue;">
+ <div class="contentcontainer med left" style="margin-left: 500px;">
+     <h1>Salary Prediction </h1>
+    <h2> Yes = 1 and No = 0</h2>
+     <!-- Main Input For Receiving Query to our ML -->
+     
+    <form action="{{ url_for('predict')}}" method="post">
+        <img src="{{url_for('static', filename = 'image.png' )}}",alt="Image" width="400" ,height="400"><br>
+
+
+
+            <input type="number" name="Experience" placeholder="experience" required="required" size="200" /><br>
+            <input type="number" name="Python" placeholder="python" required="required" size="20" /><br>
+            <input type="number" name="Machine Learning" placeholder="machine learning" required="required" size="20" /><br>
+            <input type="number" name="Azure" placeholder="azure" required="required" size="20" /><br>
+            <input type="number" name="Nlp" placeholder="nlp" required="required" size="20" /><br>
+            <input type="number" name="Tableau" placeholder="tableau" required="required" size="20" /><br>
+            <input type="number" name="Adv excel" placeholder="advanced excel" required="required" size="20" /><br>
+            <input type="number" name="Deep Learning" placeholder="deep learning" required="required" size="20" /><br>
+            <input type="number" name="Sql" placeholder="sql" required="required" size="20" /><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</bodystyle="background-color:red;">
+</html>
